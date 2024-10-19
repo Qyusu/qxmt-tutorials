@@ -1,0 +1,50 @@
+description: "Configuration file for the simple example"
+
+global_settings:
+  random_seed: &global_seed 42
+  task_type: "classification"
+
+dataset:
+  type: "generate"
+  generate_method: "linear"
+  params: {
+    "n_samples": 100,
+    "n_features": 2,
+    "n_classes": 3,
+  }
+  random_seed: *global_seed
+  split:
+    train_ratio: 0.8
+    validation_ratio: 0.0
+    test_ratio: 0.2
+    shuffle: true
+  features: null
+  raw_preprocess_logic: null
+  transform_logic: null
+
+device:
+  platform: "pennylane"
+  name: "default.qubit"
+  n_qubits: 2
+  shots: null
+
+feature_map:
+  module_name: "qxmt.feature_maps.pennylane"
+  implement_name: "ZZFeatureMap"
+  params:
+    reps: 2
+
+kernel:
+  module_name: "qxmt.kernels.pennylane"
+  implement_name: "FidelityKernel"
+  params: {}
+
+model:
+  name: "qsvc"
+  file_name: "model.pkl"
+  params:
+    C: 1.0
+    gamma: 0.05
+
+evaluation:
+  default_metrics: ["accuracy", "precision", "recall", "f1_score"]
