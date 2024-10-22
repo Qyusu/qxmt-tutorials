@@ -5,13 +5,13 @@ global_settings:
   task_type: "classification"
 
 dataset:
-  type: "generate"
-  generate_method: "linear"
-  params: {
-    "n_samples": 100,
-    "n_features": 2,
-    "n_classes": 3,
-  }
+  generate:
+    generate_method: "linear"
+    params: {
+      "n_samples": 100,
+      "n_features": 2,
+      "n_classes": 2,
+    }
   random_seed: *global_seed
   split:
     train_ratio: 0.8
@@ -41,10 +41,14 @@ kernel:
 
 model:
   name: "qsvc"
-  file_name: "model.pkl"
   params:
     C: 1.0
     gamma: 0.05
 
 evaluation:
-  default_metrics: ["accuracy", "precision", "recall", "f1_score"]
+  default_metrics:
+  - "accuracy"
+  - "precision"
+  - "recall"
+  - "f1_score"
+  custom_metrics: []
