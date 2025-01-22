@@ -7,10 +7,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-qxmt = "0.3.7"
+qxmt = "0.4.5"
 scikit-learn = "^1.5.2"
 jupyterlab = "^4.2.5"
+pennylane-lightning = "^0.39.0"
 
+[tool.poetry.extras]
+lightning = ["pennylane-lightning"]
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
