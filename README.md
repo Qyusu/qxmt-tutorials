@@ -2,7 +2,7 @@
 This repository provides a collection of tutorials designed to help you become proficient with [QXMT](https://github.com/Qyusu/qxmt) and integrate this tool into your research or experimental workflows. Each tutorial is available in `.ipynb` notebook format, allowing you to start right away after cloning this repository. If you want a hands-on learning experience beyond just reading the documentation, these tutorials are ideal for you!
 
 ## Environment Setup
-QXMT requires Python 3.10 or 3.11, and we recommend using Poetry for environment setup. If these are not already installed on your system, refer to the following commands. This repository has minimal external library dependencies, so you are welcome to set up your environment using any preferred method by consulting `pyproject.toml`.
+QXMT requires Python >=3.10, and we recommend using Poetry for environment setup. If these are not already installed on your system, refer to the following commands. This repository has minimal external library dependencies, so you are welcome to set up your environment using any preferred method by consulting `pyproject.toml`.
 
 ``` bash
 # Set up the Python environment with pyenv
