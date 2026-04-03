@@ -27,6 +27,8 @@ device:
   device_name: "default.qubit"
   n_qubits: 2
   shots: null
+  device_options:
+    seed: *global_seed
 
 feature_map:
   module_name: "qxmt.feature_maps.pennylane"
@@ -43,7 +45,7 @@ model:
   name: "qsvc"
   params:
     C: 1.0
-    gamma: 0.05
+    gamma:  "scale"
 
 evaluation:
   default_metrics:
